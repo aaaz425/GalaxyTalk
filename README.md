@@ -45,37 +45,15 @@ Spring Boot · MySQL · MongoDB · Redis · MSA (Gateway + Eureka) · Docker · 
 
 ## 주요 기능
 
-### 3D 우주 씬
-
-React Three Fiber + Drei로 행성·은하수·별자리 등 우주 배경을 인터랙티브하게 구현했습니다. GLB 포맷의 위성 안테나·워키토키·눈집 등 3D 에셋을 로드하고 애니메이션을 처리하며, Postprocessing으로 빛 번짐 효과를 추가했습니다.
-
-### WebRTC 화상 채팅
-
-LiveKit 기반 1:1 화상·음성 통화를 제공합니다. 기본 UI를 그대로 쓰지 않고 커스텀 컨트롤바, 오디오 비주얼라이저, 이모지 리액션 패널을 직접 구현했습니다.
-
-### 실시간 매칭
-
-STOMP.js + SockJS WebSocket으로 매칭 대기·알림·수락/거절 흐름을 처리합니다. Zustand로 매칭 상태(대기 → 매칭 → 수락/거절 → 채팅)를 전역 관리합니다.
-
-### AI 고민 유사도 매칭
-
-사용자가 입력한 고민 텍스트를 FastAPI AI 서버로 전송해 임베딩 유사도를 계산하고, 가장 비슷한 고민을 가진 상대와 1:1로 연결합니다.
-
-### 소셜 로그인
-
-Kakao·Naver OAuth 2.0을 지원합니다. JWT Refresh Token Rotation 방식으로 토큰을 갱신합니다.
-
-### 마이페이지
-
-채팅 후 상대방에게 받은 편지 목록과 계정 메뉴를 제공합니다.
-
-### MSW 목업
-
-모든 API 엔드포인트에 대해 MSW 핸들러를 구성해, BE 없이 프론트엔드 독립 개발이 가능합니다.
-
-### 모바일 앱
-
-Capacitor로 웹 코드를 그대로 Android/iOS 네이티브 앱으로 빌드할 수 있습니다.
+| 기능 | 설명 |
+| --- | --- |
+| 3D 우주 씬 | React Three Fiber + Drei로 행성·은하수·별자리 우주 배경 구현, Postprocessing 빛 번짐 효과 |
+| WebRTC 화상 채팅 | LiveKit 기반 1:1 화상·음성 통화, 커스텀 컨트롤바·오디오 비주얼라이저·이모지 리액션 |
+| 실시간 매칭 | WebSocket으로 매칭 대기·수락/거절 흐름 처리, Zustand 전역 상태 관리 |
+| AI 고민 유사도 매칭 | 고민 텍스트 임베딩 유사도로 비슷한 상대와 1:1 연결 |
+| 소셜 로그인 | Kakao·Naver OAuth 2.0, JWT Refresh Token Rotation |
+| 마이페이지 | 받은 편지 목록, 계정 설정 |
+| MSW 목업 | 전 API 핸들러 구성, BE 없이 프론트 독립 개발 가능 |
 
 ---
 
@@ -121,9 +99,9 @@ npm run ios        # iOS 앱
 
 | 이름 | 역할 | 개발 내용 |
 | --- | --- | --- |
-| 민인애 | FE | LiveKit 화상·음성·텍스트 채팅 구현 (VideoRenderer, AudioVisualizer, ReactionPanel), 채팅 UI/UX, 피드백 기능, Three.js 최적화 |
+| 민인애 | FE | LiveKit 화상·음성·텍스트 채팅 구현 (VideoRenderer, AudioVisualizer, ReactionPanel), 채팅 UI/UX, 피드백 기능, Three.js 최적화, 3D 씬 구현 |
 | 박유진 | FE | 3D 씬 구현 (React Three Fiber), 소셜 로그인 · 회원가입, 매칭 상태 관리, 마이페이지 |
-| 김준형 | Infra |  |
-| 박도아 | BE |  |
-| 차수홍 | BE |  |
-| 홍찬우 | BE |  |
+| 김준형 | Infra | MSA 인프라 구축 (Docker, Jenkins CI/CD, Nginx, Gateway, Eureka) |
+| 박도아 | BE | 사용자 인증·회원 API (Spring Boot, MySQL), 소셜 로그인 서버 연동 |
+| 차수홍 | BE | 매칭·채팅·편지 API (Spring Boot, MongoDB, Redis) |
+| 홍찬우 | BE | AI 고민 유사도 매칭 서버 (FastAPI), 임베딩 모델 연동 |
